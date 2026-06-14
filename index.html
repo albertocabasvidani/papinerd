@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papi Nerd — Beyblade X battle videos & publishing tool</title>
+  <meta name="description" content="Papi Nerd is a Beyblade X content channel. This site documents the Papi Nerd publishing tool, which uploads the channel's own edited battle videos to its own social accounts, including TikTok via the Content Posting API.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="brand"><span class="dot"></span> Papi Nerd</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Beyblade X battles, edited and shared.</h1>
+      <p class="lead">Papi Nerd is a content channel dedicated to Beyblade X. We film top-down matches,
+      edit them into short videos, and publish them on our own social channels. This site documents
+      the in-house tool we use to publish those videos — including to TikTok.</p>
+    </div>
+
+    <section class="block">
+      <h2>What Papi Nerd does</h2>
+      <p>We record Beyblade X matches with a fixed overhead camera, cut the dead time between launches,
+      and turn each match into a vertical short video. The finished videos are published on the Papi Nerd
+      accounts on YouTube, TikTok and Instagram. Everything you see published is content we created
+      ourselves and own.</p>
+    </section>
+
+    <section class="block">
+      <h2>The Papi Nerd publishing tool</h2>
+      <p>To avoid uploading every short by hand on three platforms, we built a small internal tool that
+      takes a finished video file and uploads it to our own channel accounts through each platform's
+      official API. For TikTok it uses the <strong>TikTok Content Posting API</strong>. The tool only
+      ever posts to the single TikTok account that the channel owner has personally authorized; it does
+      not act on behalf of any other users and is not offered to third parties.</p>
+    </section>
+
+    <section class="block">
+      <h2>How we use the TikTok API</h2>
+      <p>The tool requests the minimum scopes needed to publish the channel's own videos:</p>
+      <table class="scopes">
+        <tr><th>Scope</th><th>How we use it</th></tr>
+        <tr>
+          <td><code>video.upload</code></td>
+          <td>Upload a finished video to the channel owner's TikTok inbox as a draft, so it can be
+          reviewed and posted from the TikTok app.</td>
+        </tr>
+        <tr>
+          <td><code>video.publish</code></td>
+          <td>Directly publish a finished video to the channel owner's own TikTok profile, with the
+          caption and hashtags prepared by the tool. Used only for the owner's own account.</td>
+        </tr>
+        <tr>
+          <td><code>user.info.basic</code></td>
+          <td>Read the authorized account's basic profile (open id, display name) to confirm the tool
+          is connected to the correct channel account before uploading.</td>
+        </tr>
+      </table>
+      <p>The TikTok access and refresh tokens are stored locally on the channel owner's own computer and
+      are used only to call the Content Posting API. We do not collect, store or share data belonging to
+      any other TikTok users. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    </section>
+
+    <div class="cards wrap">
+      <div class="card">
+        <h3>Watch</h3>
+        <p>Beyblade X match shorts on the Papi Nerd channels.</p>
+      </div>
+      <div class="card">
+        <h3>Open source ethos</h3>
+        <p>The publishing tool is a personal utility used only for the channel's own content.</p>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Questions? <a href="mailto:cinquequarti@gmail.com">cinquequarti@gmail.com</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <p>© 2026 Papi Nerd. Beyblade and Beyblade X are trademarks of their respective owners. This is an
+    independent fan content channel and is not affiliated with or endorsed by TikTok or the Beyblade
+    rights holders.</p>
+  </footer>
+</body>
+</html>
