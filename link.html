@@ -55,7 +55,14 @@
   @keyframes respiro1{from{opacity:.75}to{opacity:1}}
   @keyframes respiro2{from{opacity:1}to{opacity:.7}}
 
-  main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:44px 20px 56px}
+  /* i padding laterali tengono conto del notch: in orizzontale su iPhone
+     l'area utile e' piu' stretta della finestra */
+  main{
+    position:relative;z-index:1;
+    max-width:520px;margin:0 auto;
+    padding:44px calc(20px + env(safe-area-inset-right)) calc(56px + env(safe-area-inset-bottom))
+            calc(20px + env(safe-area-inset-left));
+  }
 
   header{text-align:center;margin-bottom:32px}
   .brand{
@@ -170,9 +177,15 @@
   button:active{transform:scale(.99)}
   .honey{position:absolute;left:-9999px}
 
-  footer{margin-top:30px;text-align:center;color:var(--muted);font-size:.8rem}
-  footer a{color:var(--muted);margin:0 8px}
-  footer p{margin:10px 0 0;line-height:1.5}
+  footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.8rem}
+  /* bersagli da 44px: erano tre righe di testo alte 17, impossibili da
+     centrare col pollice */
+  footer a{
+    display:inline-block;
+    padding:12px;line-height:20px;
+    color:var(--muted);
+  }
+  footer p{margin:6px 0 0;line-height:1.5}
 
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
@@ -203,8 +216,8 @@
         <span class="ico" aria-hidden="true">🏷️</span>
         <span class="txt">
           <strong>Avvisi rapidi gratuiti su disponibilità e offerte Beyblade</strong>
-          <p>Nuove uscite, preordini e riassortimenti controllati ogni mezz'ora su Amazon di sei
-          paesi e sui negozi italiani più forniti. Arrivano sul telefono, prima che finiscano.</p>
+          <p>Nuove uscite, preordini e riassortimenti su Amazon di sei paesi e sui negozi italiani
+          più forniti, aggiornati di continuo. Arrivano sul telefono, prima che finiscano.</p>
         </span>
         <span class="arrow" aria-hidden="true">›</span>
       </a>
