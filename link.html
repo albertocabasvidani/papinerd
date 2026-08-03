@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Papi Nerd — Link utili</title>
+<meta name="description" content="Tutti i link di Papi Nerd: le app segnapunti per Android e iPhone, il canale con le offerte Beyblade X, il sito delle combo e il modulo di contatto.">
+<meta name="theme-color" content="#0f1014">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Papi Nerd — Link utili">
+<meta property="og:description" content="App segnapunti, offerte Beyblade X, combo e contatti. Tutto in una pagina.">
+<meta property="og:url" content="https://albertocabasvidani.github.io/papinerd/link.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='11' fill='%2300e0c6'/></svg>">
+<style>
+  :root{
+    --bg:#0f1014;
+    --panel:#181a21;
+    --panel-hi:#1e212a;
+    --ink:#f2f3f7;
+    --muted:#a8adbd;
+    --accent:#00e0c6;
+    --accent2:#ff4d6d;
+    --line:#2a2d38;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* due aloni colorati che respirano: la parte "frizzante", niente di piu'.
+     Ancorati al viewport con inset:0, mai piu' larghi di lui. */
+  body::before,body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+  }
+  body::before{
+    background:radial-gradient(60vmax 60vmax at 8% -6%, rgba(0,224,198,.28), transparent 62%);
+    animation:respiro1 9s ease-in-out infinite alternate;
+  }
+  body::after{
+    background:radial-gradient(62vmax 62vmax at 96% 106%, rgba(255,77,109,.26), transparent 62%);
+    animation:respiro2 11s ease-in-out infinite alternate;
+  }
+  @keyframes respiro1{from{opacity:.75}to{opacity:1}}
+  @keyframes respiro2{from{opacity:1}to{opacity:.7}}
+
+  main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:44px 20px 56px}
+
+  header{text-align:center;margin-bottom:32px}
+  .brand{
+    display:inline-flex;align-items:center;gap:11px;
+    font-size:1.9rem;font-weight:800;letter-spacing:.5px;margin:0;
+  }
+  .brand .dot{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 16px var(--accent);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{50%{transform:scale(.72);opacity:.65}}
+  .tagline{margin:8px 0 0;color:var(--muted);font-size:1rem}
+
+  .links{display:grid;gap:12px;list-style:none;margin:0;padding:0}
+
+  .links a{
+    display:flex;align-items:center;gap:14px;
+    min-height:68px;padding:14px 16px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    color:var(--ink);text-decoration:none;
+    transition:transform .16s ease,border-color .16s ease,background .16s ease;
+  }
+  .links a:hover,.links a:focus-visible{
+    background:var(--panel-hi);
+    border-color:var(--accent);
+    transform:translateY(-2px);
+    outline:none;
+  }
+  .links a:active{transform:translateY(0) scale(.99)}
+
+  .ico{
+    flex:0 0 44px;height:44px;
+    display:grid;place-items:center;
+    font-size:1.35rem;line-height:1;
+    background:rgba(0,224,198,.11);
+    border:1px solid rgba(0,224,198,.28);
+    border-radius:12px;
+  }
+  .links li:nth-child(odd) .ico{background:rgba(255,77,109,.11);border-color:rgba(255,77,109,.28)}
+
+  .txt{min-width:0;flex:1}
+  .txt strong{display:block;font-size:1.02rem;font-weight:700}
+  .txt span{display:block;color:var(--muted);font-size:.87rem}
+  .arrow{flex:0 0 auto;color:var(--muted);font-size:1.2rem;transition:transform .16s ease,color .16s ease}
+  .links a:hover .arrow{color:var(--accent);transform:translateX(3px)}
+
+  .contatto{
+    margin-top:34px;padding:22px 18px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+  }
+  .contatto h2{margin:0 0 4px;font-size:1.12rem}
+  .contatto p{margin:0 0 16px;color:var(--muted);font-size:.9rem}
+  .contatto label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+  .campo{margin-bottom:13px}
+  input,textarea{
+    width:100%;
+    padding:12px 13px;
+    font:inherit;font-size:1rem; /* 16px: evita lo zoom automatico su iOS */
+    color:var(--ink);
+    background:#11131a;
+    border:1px solid var(--line);
+    border-radius:11px;
+    transition:border-color .16s ease;
+  }
+  textarea{resize:vertical;min-height:104px}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  input::placeholder,textarea::placeholder{color:#5f667a}
+  button{
+    width:100%;min-height:52px;
+    font:inherit;font-size:1rem;font-weight:700;
+    color:#08131a;
+    background:var(--accent);
+    border:0;border-radius:12px;
+    cursor:pointer;
+    transition:filter .16s ease,transform .16s ease;
+  }
+  button:hover{filter:brightness(1.08)}
+  button:active{transform:scale(.99)}
+  .honey{position:absolute;left:-9999px}
+
+  footer{margin-top:30px;text-align:center;color:var(--muted);font-size:.8rem}
+  footer a{color:var(--muted);margin:0 8px}
+  footer p{margin:10px 0 0;line-height:1.5}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="brand"><span class="dot"></span>Papi Nerd</h1>
+    <p class="tagline">Beyblade X — battaglie, app e offerte</p>
+  </header>
+
+  <ul class="links">
+    <li>
+      <a href="https://play.google.com/store/apps/details?id=com.beybladex.score">
+        <span class="ico" aria-hidden="true">🤖</span>
+        <span class="txt"><strong>App Android</strong><span>Segnapunti gratuito</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://apps.apple.com/it/app/id6788671503">
+        <span class="ico" aria-hidden="true">🍏</span>
+        <span class="txt"><strong>App iPhone</strong><span>Segnapunti gratuito</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://whatsapp.com/channel/0029Vb984EzGZNCnRuAWT112">
+        <span class="ico" aria-hidden="true">🏷️</span>
+        <span class="txt"><strong>Canale offerte</strong><span>Sconti quotidiani</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://albertocabasvidani.github.io/beyblade-x-combo-finder/">
+        <span class="ico" aria-hidden="true">🧩</span>
+        <span class="txt"><strong>Sito combo</strong><span>Combo vincenti</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </li>
+    <li>
+      <a href="#contatto">
+        <span class="ico" aria-hidden="true">✉️</span>
+        <span class="txt"><strong>Scrivimi</strong><span>Domande e proposte</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </li>
+  </ul>
+
+  <section class="contatto" id="contatto">
+    <h2>Modulo di contatto</h2>
+    <p>Domande, idee per un video o collaborazioni.</p>
+    <form action="https://formsubmit.co/cinquequarti@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Messaggio dalla pagina link di Papi Nerd">
+      <input type="hidden" name="_next" value="https://albertocabasvidani.github.io/papinerd/grazie.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" name="nome" placeholder="Come ti chiami" required>
+      </div>
+      <div class="campo">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="dove ti rispondo" required>
+      </div>
+      <div class="campo">
+        <label for="messaggio">Messaggio</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui" required></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Termini</a>
+    </div>
+    <p>© 2026 Papi Nerd. Canale indipendente, non affiliato ai titolari del marchio Beyblade.</p>
+  </footer>
+</main>
+</body>
+</html>
